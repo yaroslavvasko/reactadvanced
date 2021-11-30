@@ -1,0 +1,17 @@
+.slide {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide > div {
+  max-width: 100%;
+}
+
+.codepenContainer {
+  overflow: auto;
+}
+
+.codepenContainer pre {
+  font-size: 14px !important;
+}

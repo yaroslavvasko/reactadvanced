@@ -1,0 +1,21 @@
+.showButton {
+  position: relative;
+  background-color: #dc3545;
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
+  font-size: 2em;
+  text-decoration: none;
+  display: block;
+  padding: 4px;
+  border-radius: 8px;
+  box-shadow: 0 9px 0 #bd1120, 0px 9px 25px rgba(0, 0, 0, 0.7);
+  margin: 100px auto;
+  width: 160px;
+  text-align: center;
+  cursor: pointer;
+}
+.showButton:active {
+  box-shadow: 0 3px 0 #bd1120, 0px 3px 6px rgba(0, 0, 0, 0.7);
+  position: relative;
+  top: 6px;
+}
