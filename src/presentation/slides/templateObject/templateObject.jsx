@@ -22,7 +22,7 @@ export const TemplateObject = () => {
         <NumDiv
           key={number}
           number={number}
-          style={{ margin: 10, backgroundColor: "greed" }}
+          style={{ margin: 10, padding: 10, backgroundColor: "orange" }}
         />
       ))}
     </>
@@ -45,14 +45,14 @@ export const TemplateObjectCode = `
                 <NumDiv
                     key={number}
                     number={number}
-                    style={{ margin: 10, backgroundColor: "greed" }}
+                    style={{ margin: 10, padding: 10, backgroundColor: "orange" }}
                 />
             ))}
         </>;
     };
 `;
 
-const styleObj = { margin: 10, backgroundColor: "greed" };
+const styleObj = { margin: 10, padding: 10, backgroundColor: "orange" };
 
 export const GlobalStyleObject = () => {
   const [numbers, setNumbers] = useState([]);
