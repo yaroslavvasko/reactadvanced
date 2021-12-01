@@ -30,6 +30,17 @@ import {
   TemplateObject,
   TemplateObjectCode,
 } from "./slides/templateObject/templateObject";
+import {
+  BadKeyIndex,
+  BadKeyIndexCode,
+  GoodKeyId,
+} from "./slides/keyIndex/keyIndex";
+import {
+  AsyncUseEffectBad,
+  AsyncUseEffectBadCode,
+  AsyncUseEffectGood,
+  AsyncUseEffectGoodCode,
+} from "./slides/asyncUseEffect/asyncUseEffect";
 
 const Presentation = () => {
   return (
@@ -98,6 +109,32 @@ const Presentation = () => {
         title="Template objects"
         demoComponent={<GlobalStyleObject />}
         code={GlobalStyleObjectCode}
+        emoji="🔥"
+      />
+
+      <SlideWrapper
+        title="Index as key"
+        demoComponent={<BadKeyIndex />}
+        code={BadKeyIndexCode}
+        emoji="💩"
+      />
+      <SlideWrapper
+        title="Index as key"
+        demoComponent={<GoodKeyId />}
+        code={GlobalStyleObjectCode}
+        emoji="🔥"
+      />
+
+      <SlideWrapper
+        title="Async useEffect"
+        demoComponent={<AsyncUseEffectBad />}
+        code={AsyncUseEffectBadCode}
+        emoji="💩"
+      />
+      <SlideWrapper
+        title="Index as key"
+        demoComponent={<AsyncUseEffectGood />}
+        code={AsyncUseEffectGoodCode}
         emoji="🔥"
       />
     </Deck>
