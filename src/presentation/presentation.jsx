@@ -1,7 +1,7 @@
 import React from "react";
 import { template, theme } from "./presentationConfig";
 import ShowDemo from "../helpers/showDemo/showDemo";
-import { Deck } from "spectacle";
+import { Deck, FlexBox, Image, Slide } from "spectacle";
 import MainSlide from "./slides/main";
 import SlideWrapper from "./slides/SlideWrapper";
 import {
@@ -50,10 +50,18 @@ import {
   CounterSeparatedCode,
 } from "./slides/renderDrill/renderDrill";
 
+import reactMeme from "../img/reactjsmeme.jpg";
+
 const Presentation = () => {
   return (
     <Deck transitionDuration={500} template={template} theme={theme}>
       <MainSlide />
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Image src={reactMeme} width="30vw" />
+        </FlexBox>
+      </Slide>
+
       <SlideWrapper
         title="Redundant initializations"
         demoComponent={<RedundantInitBad />}
@@ -68,7 +76,7 @@ const Presentation = () => {
       />
 
       <SlideWrapper
-        title="(Almost) Infinite loop"
+        title="Infinite loop"
         demoComponent={
           <ShowDemo>
             <LoopBad />
@@ -78,7 +86,7 @@ const Presentation = () => {
         emoji="💩"
       />
       <SlideWrapper
-        title="(Almost) Infinite loop"
+        title="Infinite loop"
         demoComponent={
           <ShowDemo>
             <NoLoop />

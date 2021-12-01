@@ -10,11 +10,22 @@ const ShowDemo = ({ children }) => {
     }, 300);
   };
 
-  return show ? (
-    <>{children}</>
-  ) : (
-    <div onClick={onShow} className="showButton">
-      DEMO
+  const onHide = () => setShow(false);
+
+  return (
+    <div className="demoCointainer">
+      {show ? (
+        <>
+          <div onClick={onHide} className="bigButton hideButton">
+            HIDE
+          </div>
+          {children}
+        </>
+      ) : (
+        <div onClick={onShow} className="bigButton showButton">
+          DEMO
+        </div>
+      )}
     </div>
   );
 };
