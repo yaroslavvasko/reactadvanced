@@ -50,6 +50,8 @@ import {
 } from "./slides/renderDrill/renderDrill";
 
 import reactMeme from "../img/reactjsmeme.jpg";
+import renderMeme from "../img/rendermeme.jpg";
+import thanksmeme from "../img/thanksmeme.jpg";
 
 const Presentation = () => {
   return (
@@ -151,6 +153,11 @@ const Presentation = () => {
         code={CounterDrillCode}
         emoji="💩"
       />
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Image src={renderMeme} width="30vw" />
+        </FlexBox>
+      </Slide>
       <SlideWrapper
         title="Render Drilling"
         demoComponent={<CounterDrillGood />}
@@ -163,6 +170,12 @@ const Presentation = () => {
         code={CounterSeparatedCode}
         emoji="🔥"
       />
+
+      <Slide>
+        <FlexBox height="100%" flexDirection="column">
+          <Image src={thanksmeme} width="30vw" />
+        </FlexBox>
+      </Slide>
     </Deck>
   );
 };
