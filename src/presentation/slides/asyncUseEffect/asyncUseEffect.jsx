@@ -21,6 +21,7 @@ const fruitsIcons = [
 ];
 
 const fruitStyle = { margin: 0, cursor: "pointer" };
+const iconStyle = { fontSize: 30 };
 
 const getFruitIconAsync = (fruit) =>
   new Promise((resolve, _) => {
@@ -42,7 +43,7 @@ const FruitIcon = ({ selectedFruit }) => {
     onFruitSelected(selectedFruit);
   }, [selectedFruit]);
 
-  return <i>{selectedIcon}</i>;
+  return <i style={iconStyle}>{selectedIcon}</i>;
 };
 
 export const AsyncUseEffectBad = () => {
@@ -104,7 +105,7 @@ const FruitIconAsync = ({ selectedFruit }) => {
     return () => (canceled = true);
   }, [selectedFruit]);
 
-  return <i>{selectedIcon}</i>;
+  return <i style={iconStyle}>{selectedIcon}</i>;
 };
 
 export const AsyncUseEffectGood = () => {

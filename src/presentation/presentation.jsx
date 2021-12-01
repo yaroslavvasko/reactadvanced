@@ -41,6 +41,12 @@ import {
   AsyncUseEffectGood,
   AsyncUseEffectGoodCode,
 } from "./slides/asyncUseEffect/asyncUseEffect";
+import {
+  CounterDrill,
+  CounterDrillCode,
+  CounterDrillGood,
+  CounterDrillGoodCode,
+} from "./slides/renderDrill/renderDrill";
 
 const Presentation = () => {
   return (
@@ -126,15 +132,28 @@ const Presentation = () => {
       />
 
       <SlideWrapper
-        title="Async useEffect"
+        title="Async in useEffect"
         demoComponent={<AsyncUseEffectBad />}
         code={AsyncUseEffectBadCode}
         emoji="💩"
       />
       <SlideWrapper
-        title="Index as key"
+        title="Async in useEffect"
         demoComponent={<AsyncUseEffectGood />}
         code={AsyncUseEffectGoodCode}
+        emoji="🔥"
+      />
+
+      <SlideWrapper
+        title="Render Drilling"
+        demoComponent={<CounterDrill />}
+        code={CounterDrillCode}
+        emoji="💩"
+      />
+      <SlideWrapper
+        title="Render Drilling"
+        demoComponent={<CounterDrillGood />}
+        code={CounterDrillGoodCode}
         emoji="🔥"
       />
     </Deck>
