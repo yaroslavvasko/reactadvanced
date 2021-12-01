@@ -1,6 +1,7 @@
 import React, { memo, useState } from "react";
 import RenderVisualizer from "../../../helpers/renderVisualizer/renderVisualizer";
 import "../../../helpers/renderVisualizer/style.css";
+import { showMessage } from "./showMessage";
 
 const NumButton = memo(({ number, onShow }) => {
   const onClick = () => onShow(number);
@@ -31,7 +32,7 @@ export class AnonymousCallback extends React.Component {
           <NumButton
             key={number}
             number={number}
-            onShow={(num) => alert(`Number ${num}`)}
+            onShow={(num) => showMessage(`Number ${num}`)}
           />
         ))}
       </>
@@ -57,7 +58,7 @@ export const AnonymousCallbackCode = `
                 <button onClick={this.addNumber}>Add number</button>
         
                 {this.state.numbers.map((number) => (
-                    <NumButton key={number} number={number} onShow={(num) => alert(\`Number \${num}\`)}
+                    <NumButton key={number} number={number} onShow={(num) => showMessage(\`Number \${num}\`)}
                     />
                 ))}
             </>);
@@ -76,7 +77,7 @@ export class StandardCallback extends React.Component {
       numbers: [...prevState.numbers, prevState.numbers.length],
     }));
 
-  alertNumber = (num) => alert(`Number ${num}`);
+  alertNumber = (num) => showMessage(`Number ${num}`);
 
   render() {
     return (
@@ -98,7 +99,7 @@ export const StandardCallbackCode = `
         this.setState((prevState) => ({
             numbers: [...prevState.numbers, prevState.numbers.length],
         }));
-        alertNumber = (num) => alert(\`Number \${num}\`);
+        alertNumber = (num) => showMessage(\`Number \${num}\`);
     
         render() {
             return (<>
@@ -113,7 +114,7 @@ export const StandardCallbackCode = `
     }
     `;
 
-const globalAlertNumber = (num) => alert(`Number ${num}`);
+const globalAlertNumber = (num) => showMessage(`Number ${num}`);
 
 export const FunctionComponentCallback = () => {
   const [numbers, setNumbers] = useState([]);
@@ -132,7 +133,7 @@ export const FunctionComponentCallback = () => {
 };
 
 export const FunctionCallbackCode = `
-  const globalAlertNumber = (num) => alert(\`Number \${num}\`);
+  const globalAlertNumber = (num) => showMessage(\`Number \${num}\`);
 
   const App = () => {
     const [numbers, setNumbers] = useState([]);

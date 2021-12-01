@@ -8,10 +8,10 @@ import "./index.css";
 import "react-notifications-component/dist/theme.css";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <Presentation />
     <ReactNotification />
-  </React.StrictMode>,
+  </>,
   document.getElementById("root")
 );
 

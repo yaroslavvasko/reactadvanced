@@ -1,12 +1,13 @@
 import React, { useState } from "react";
+import { calculateMax, showMaxNotification } from "./calculateMax";
 
 export const RedundantInitBad = () => {
   const [numbers, setNumbers] = useState([]);
 
-  const max = Math.max(...numbers);
+  const max = calculateMax(numbers);
 
   const addNumber = () => setNumbers((nums) => [...nums, nums.length]);
-  const showMax = () => alert(`Max value: ${max}`);
+  const showMax = () => showMaxNotification(max);
 
   return (
     <>
@@ -22,10 +23,10 @@ export const RedundantInitBadCode = `
 const App = () => {
   const [numbers, setNumbers] = useState([]);
 
-  const max = Math.max(...numbers);
+  const max = calculateMax(numbers);
 
   const addNumber = () => setNumbers((nums) => [...nums, nums.length]);
-  const showMax = () => alert(\`Max value: \${max}\`);
+  const showMax = () => showMaxNotification(max);
 
   return (
     <>
@@ -42,8 +43,8 @@ export const RedundInitGood = () => {
 
   const addNumber = () => setNumbers((nums) => [...nums, nums.length]);
   const showMax = () => {
-    const max = Math.max(...numbers);
-    alert(`Max value: ${max}`);
+    const max = calculateMax(numbers);
+    showMaxNotification(max);
   };
 
   return (
@@ -62,8 +63,8 @@ const App = () => {
 
   const addNumber = () => setNumbers((nums) => [...nums, nums.length]);
   const showMax = () => {
-    const max = Math.max(...numbers);
-    alert(\`Max value: \${max}\`);
+    const max = calculateMax(numbers);
+    showMaxNotification(max);
   } 
 
   return (
