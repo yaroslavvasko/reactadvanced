@@ -1,6 +1,5 @@
 import React from "react";
 import { template, theme } from "./presentationConfig";
-import ShowDemo from "../helpers/showDemo/showDemo";
 import { Deck, FlexBox, Image, Slide } from "spectacle";
 import MainSlide from "./slides/main";
 import SlideWrapper from "./slides/SlideWrapper";
@@ -77,21 +76,13 @@ const Presentation = () => {
 
       <SlideWrapper
         title="Infinite loop"
-        demoComponent={
-          <ShowDemo>
-            <LoopBad />
-          </ShowDemo>
-        }
+        demoComponent={<LoopBad />}
         code={LoopBadCode}
         emoji="💩"
       />
       <SlideWrapper
         title="Infinite loop"
-        demoComponent={
-          <ShowDemo>
-            <NoLoop />
-          </ShowDemo>
-        }
+        demoComponent={<NoLoop />}
         code={NoLoopCode}
         emoji="🔥"
       />
@@ -116,13 +107,13 @@ const Presentation = () => {
       />
 
       <SlideWrapper
-        title="Template objects"
+        title="Object initialization in render"
         demoComponent={<TemplateObject />}
         code={TemplateObjectCode}
         emoji="💩"
       />
       <SlideWrapper
-        title="Template objects"
+        title="Object initialization in render"
         demoComponent={<GlobalStyleObject />}
         code={GlobalStyleObjectCode}
         emoji="🔥"

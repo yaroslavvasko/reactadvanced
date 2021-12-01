@@ -1,5 +1,6 @@
 import React from "react";
 import { Slide, Text, FlexBox, CodePane } from "spectacle";
+import ShowDemo from "../../helpers/showDemo/showDemo";
 
 import "./slidesStyles.css";
 
@@ -52,7 +53,7 @@ const SlideWrapper = ({
 
           {demoComponent ? (
             <FlexBox flexDirection="column" width="50%">
-              {demoComponent}
+              <ShowDemo>{demoComponent}</ShowDemo>
             </FlexBox>
           ) : (
             <></>
