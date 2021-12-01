@@ -46,6 +46,8 @@ import {
   CounterDrillCode,
   CounterDrillGood,
   CounterDrillGoodCode,
+  CounterSeparated,
+  CounterSeparatedCode,
 } from "./slides/renderDrill/renderDrill";
 
 const Presentation = () => {
@@ -154,6 +156,12 @@ const Presentation = () => {
         title="Render Drilling"
         demoComponent={<CounterDrillGood />}
         code={CounterDrillGoodCode}
+        emoji="🔥"
+      />
+      <SlideWrapper
+        title="Splitting Components"
+        demoComponent={<CounterSeparated />}
+        code={CounterSeparatedCode}
         emoji="🔥"
       />
     </Deck>

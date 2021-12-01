@@ -62,7 +62,7 @@ return <div style={componentStyles}>
 };
 `;
 
-const CounterHOC = ({ children }) => {
+const CounterWrapper = ({ children }) => {
   const [number, setNumber] = useState(0);
 
   const increase = () => setNumber((num) => num + 1);
@@ -70,16 +70,16 @@ const CounterHOC = ({ children }) => {
   return (
     <div style={componentStyles}>
       <button onClick={increase}>{number}</button>
-      <>{children}</>
+      {children}
     </div>
   );
 };
 
 export const CounterDrillGood = () => {
   return (
-    <CounterHOC>
+    <CounterWrapper>
       <ComponentC />
-    </CounterHOC>
+    </CounterWrapper>
   );
 };
 
@@ -88,15 +88,55 @@ const ComponentA = () => <div style={componentStyles}>Component A</div>;
 const ComponentB = () => <div style={componentStyles}>Component B <ComponentA /></div>;
 const ComponentC = () => <div style={componentStyles}>Component C <ComponentB /></div>;
 
-const CounterHOC = ({ children }) => {
+const CounterWrapper = ({ children }) => {
     const [number, setNumber] = useState(0);
     const increase = () => setNumber((num) => num + 1);
 
     return <div style={componentStyles}>
         <button onClick={increase}>{number}</button>
-        <>{children}</>
+        {children}
     </div>;
 };
 
-const App = () => <CounterHOC><ComponentC /></CounterHOC>;
+const App = () => <CounterWrapper><ComponentC /></CounterWrapper>;
+`;
+
+const Counter = () => {
+  const [number, setNumber] = useState(0);
+
+  const increase = () => setNumber((num) => num + 1);
+
+  return (
+    <>
+      <button onClick={increase}>{number}</button>
+    </>
+  );
+};
+
+export const CounterSeparated = () => {
+  return (
+    <div style={componentStyles}>
+      <Counter />
+      <ComponentC />
+    </div>
+  );
+};
+
+export const CounterSeparatedCode = `
+const ComponentA = () => <div style={componentStyles}>Component A</div>;
+const ComponentB = () => <div style={componentStyles}>Component B <ComponentA /></div>;
+const ComponentC = () => <div style={componentStyles}>Component C <ComponentB /></div>;
+
+const Counter = () => {
+    const [number, setNumber] = useState(0);  
+    const increase = () => setNumber((num) => num + 1);
+    return <button onClick={increase}>{number}</button>;
+};
+
+const App = () => {
+    return <div style={componentStyles}>
+        <Counter />
+        <ComponentC />
+        </div>;
+    };
 `;
