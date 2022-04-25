@@ -69,6 +69,7 @@ const CounterWrapper = ({ children }) => {
 
   return (
     <div style={componentStyles}>
+      Parent
       <button onClick={increase}>{number}</button>
       {children}
     </div>

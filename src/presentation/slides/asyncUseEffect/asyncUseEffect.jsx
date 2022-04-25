@@ -28,7 +28,7 @@ const getFruitIconAsync = (fruit) =>
     setTimeout(() => {
       const icon = fruitsIcons.filter((f) => f.id === fruit.id)[0].icon;
       resolve(icon);
-    }, 2000 / fruit.id);
+    }, 3000 / fruit.id);
   });
 
 const FruitIcon = ({ selectedFruit }) => {

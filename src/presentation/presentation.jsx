@@ -33,6 +33,7 @@ import {
   BadKeyIndex,
   BadKeyIndexCode,
   GoodKeyId,
+  GoodKeyIndexCode,
 } from "./slides/keyIndex/keyIndex";
 import {
   AsyncUseEffectBad,
@@ -130,7 +131,7 @@ const Presentation = () => {
       <SlideWrapper
         title="Index as key"
         demoComponent={<GoodKeyId />}
-        code={GlobalStyleObjectCode}
+        code={GoodKeyIndexCode}
         emoji="🔥"
       />
 

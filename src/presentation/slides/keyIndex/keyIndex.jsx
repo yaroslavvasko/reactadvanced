@@ -111,3 +111,30 @@ export const GoodKeyId = () => {
     </>
   );
 };
+
+export const GoodKeyIndexCode = `
+    const Fruit = ({ index, id, name }) => (<tr>
+            <td><label>{index}</label></td>
+            <td><label>{id}</label></td>
+            <td><label>{name}</label></td>
+            <td><input /></td>
+        </tr>);
+
+    const App = () => {
+        const [fruits, setFruits] = useState(fruitsInit.slice(0, 3));      
+        const addFruit = () =>
+            setFruits((data) => [fruitsInit[data.length], ...data]);
+      
+        return (<>
+            <button onClick={addFruit}>Add product</button>
+      
+            <table>
+              <tr>
+                <th>Index</th><th>Id</th><th>Name</th><th>Count</th>
+              </tr>
+              {fruits.map((product, index) => (
+                <Fruit key={product.id} index={index} {...product} />
+              ))}
+            </table>
+          </>);};
+`;
