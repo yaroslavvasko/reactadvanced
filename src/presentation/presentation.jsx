@@ -1,6 +1,6 @@
 import React from "react";
 import { template, theme } from "./presentationConfig";
-import { Deck, FlexBox, Image, Slide } from "spectacle";
+import { Deck, FlexBox, Image, Slide, Link } from "spectacle";
 import MainSlide from "./slides/main";
 import SlideWrapper from "./slides/SlideWrapper";
 import {
@@ -63,7 +63,6 @@ const Presentation = () => {
           <Image src={reactMeme} width="30vw" />
         </FlexBox>
       </Slide>
-
       <SlideWrapper
         title="Redundant initializations"
         demoComponent={<RedundantInitBad />}
@@ -76,7 +75,6 @@ const Presentation = () => {
         code={RedundInitGoodCode}
         emoji="🔥"
       />
-
       <SlideWrapper
         title="Infinite loop"
         demoComponent={<LoopBad />}
@@ -89,7 +87,6 @@ const Presentation = () => {
         code={NoLoopCode}
         emoji="🔥"
       />
-
       <SlideWrapper
         title="Anonymous Callback"
         demoComponent={<AnonymousCallback />}
@@ -108,7 +105,6 @@ const Presentation = () => {
         code={FunctionCallbackCode}
         emoji="🔥"
       />
-
       <SlideWrapper
         title="Object initialization in render"
         demoComponent={<TemplateObject />}
@@ -121,7 +117,6 @@ const Presentation = () => {
         code={GlobalStyleObjectCode}
         emoji="🔥"
       />
-
       <SlideWrapper
         title="Index as key"
         demoComponent={<BadKeyIndex />}
@@ -134,7 +129,6 @@ const Presentation = () => {
         code={GoodKeyIndexCode}
         emoji="🔥"
       />
-
       <SlideWrapper
         title="Async in useEffect"
         demoComponent={<AsyncUseEffectBad />}
@@ -147,7 +141,6 @@ const Presentation = () => {
         code={AsyncUseEffectGoodCode}
         emoji="🔥"
       />
-
       <SlideWrapper
         title="Render Drilling"
         demoComponent={<CounterDrill />}
@@ -171,10 +164,15 @@ const Presentation = () => {
         code={CounterSeparatedCode}
         emoji="🔥"
       />
-
       <Slide>
         <FlexBox height="100%" flexDirection="column">
           <Image src={thanksmeme} width="30vw" />
+          <Link
+            fontSize={32}
+            href="https://github.com/yaroslavvasko/reactadvanced"
+          >
+            github.com/yaroslavvasko/reactadvanced
+          </Link>
         </FlexBox>
       </Slide>
     </Deck>
